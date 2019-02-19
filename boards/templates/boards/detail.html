@@ -1,0 +1,13 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+<div>
+    <p>글 번호: {{board.id}}</p>
+    <p>글 제목: {{board.title}}</p>
+    <p>내용</p>
+    <pre>{{board.content}}</pre>
+    <p>최초 작성시간 : {{board.created_at}}</p>
+    <p>업데이트 날짜 :{{board.updated_at}}</p>
+</div>
+<a href="/boards/">돌아가기</a>
+{% endblock%}
