@@ -25,8 +25,13 @@ def create(request):
     board = Board(title=title, content=content)
     board.save()
     # return render(request, 'boards/create.html', {'board': board})
-    return redirect('/boards/')
+    return redirect(f'/boards/{board.id}')
     
 def detail(request, pk):
     board = Board.objects.get(pk=pk)
     return render(request, 'boards/detail.html', {'board': board})
+    
+def delete(request, pk):
+    board = Board.objects.get(pk=pk)
+    board.delete()
+    return redirect('/boards/')
