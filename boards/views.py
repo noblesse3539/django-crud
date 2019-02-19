@@ -35,3 +35,13 @@ def delete(request, pk):
     board = Board.objects.get(pk=pk)
     board.delete()
     return redirect('/boards/')
+    
+def edit(request, pk):
+    board = Board.objects.get(pk=pk)
+    return render(request, 'boards/edit.html', {'board':board})
+    
+def update(request, pk):
+    board = Board.objects.get(pk=pk)
+    board.title = request.POST.get('title')
+    board.content = request.POST.get('content') 
+    return redirect(f'/boards/{pk}')

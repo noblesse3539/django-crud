@@ -9,5 +9,7 @@
     <p>최초 작성시간 : {{board.created_at}}</p>
     <p>업데이트 날짜 :{{board.updated_at}}</p>
 </div>
-<a href="/boards/">돌아가기</a>
+<a href="/boards/">돌아가기</a>  
+<a href="/boards/{{board.id}}/edit/">수정하기</a> 
+<a href="/boards/{{board.id}}/delete/" onclick="return confirm('진짜 지울래?')">삭제하기</a>
 {% endblock%}
